@@ -1,19 +1,19 @@
 import React from "react";
 import "../styles/Header.css";
 import SearchIcon from "@material-ui/icons/Search";
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { auth } from "../firebase";
 
 function Header() {
-    const [{ basket, user }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
-    const handleAuthenticaton = () => {
-      if (user) {
-        auth.signOut();
-      }
+  const handleAuthenticaton = () => {
+    if (user) {
+      auth.signOut();
     }
+  };
 
   return (
     <div className="header">
@@ -25,15 +25,15 @@ function Header() {
       </Link>
 
       <div className="header__search">
-        <input className="header_searchInput" type="text" />
-        <SearchIcon className="header_searchIcon" />
+        <input className="header__searchInput" type="text" />
+        <SearchIcon className="header__searchIcon" />
       </div>
 
       {/* Sign In */}
       <div className="header__nav">
         <Link to={!user && "/login"}>
-          <div onClick={handleAuthenticaton} className="header_option">
-            <span className="header_optionLineOne">
+          <div onClick={handleAuthenticaton} className="header__option">
+            <span className="header__optionLineOne">
               Hello {!user ? "Guest" : user.email}
             </span>
             <span className="header__optionLineTwo">
@@ -43,12 +43,10 @@ function Header() {
         </Link>
 
         {/* Returns & Orders */}
-        <Link to="/orders">
-          <div className="header__option">
-            <span className="header__optionLineOne">Returns</span>
-            <span className="header__optionLineTwo">& Orders</span>
-          </div>
-        </Link>
+        <div className="header__option">
+          <span className="header__optionLineOne">Returns</span>
+          <span className="header__optionLineTwo">& Orders</span>
+        </div>
 
         {/* Your Prime */}
         <div className="header__option">
