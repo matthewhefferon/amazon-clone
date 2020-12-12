@@ -1,4 +1,8 @@
-## Amazon Clone - https://clone-3ae62.firebaseapp.com
+## Amazon Clone
+
+Demo: https://clone-3ae62.firebaseapp.com
+
+![Amazon Clone](https://user-images.githubusercontent.com/4500215/101992808-153a9b00-3c73-11eb-8175-f22bd3cbd04b.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
